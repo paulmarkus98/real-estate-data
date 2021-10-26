@@ -196,12 +196,12 @@ export class AppComponent implements OnInit {
 
   dateFormatting(val: any) {
     const date = new Date(val);
-    const hours = date.getHours();
+    const hours = date.getUTCHours();
     const minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
     return date.toDateString() + ', ' + hours + ':' + minutes;
   }
 
   onResize(event) {
-    this.view = [event.target.innerWidth / 1.35, 600];
+    this.view = [event.target.innerWidth / 1.35, 400];
   }
 }
